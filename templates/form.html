@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Currency Converterr{% endblock %}
+
+{%block content %}
+<h1>Foreign Currency Exchange Rate Calculator</h1>
+<h2>Please input the amount of money and type of money you would like the exchange rate in.</h2>
+    {% for msg in get_flashed_messages() %}
+        <p id="message">{{ msg }}</p>
+    {% endfor %}
+<form id="currency-form" action="/handle-conversion">
+    <label for="currency-from">Currency from:</label>
+    <input name="currency-from" id="currency-from" type="text" maxlength="3" minlength="3" required>
+    <br>
+    <label for="currency-to">Currency to:</label>
+    <input name="currency-to" id="currency-to" type="text" maxlength="3" minlength="3" required>
+    <br>
+    <label for="amount">Amount:</label>
+    <input name="amount" id="amount" type="number" required>
+    <br>
+    <input type="submit" value="Covert!" id="submit-button">
+</form>
+<h3>These are the currecntly supported currencies:<h3>
+    <p>|EUR - Euro Member Countries |IDR - Indonesia Rupiah |BGN - Bulgaria Lev |ILS - Israel Shekel |GBP - United Kingdom Pound |DKK - Denmark Krone |CAD - Canada Dollar |JPY - Japan Yen |HUF - Hungary Forint |RON - Romania New Leu |MYR - Malaysia Ringgit |SEK - Sweden Krona |SGD - Singapore Dollar |HKD - Hong Kong Dollar |AUD - Australia Dollar |CHF - Switzerland Franc |KRW - Korea (South) Won |CNY - China Yuan Renminbi |TRY - Turkey Lira |HRK - Croatia Kuna |NZD - New Zealand Dollar |THB - Thailand Baht |USD - United States Dollar |NOK - Norway Krone |RUB - Russia Ruble |INR - India Rupee |MXN - Mexico Peso |CZK - Czech Republic Koruna |BRL - Brazil Real |PLN - Poland Zloty |PHP - Philippines Peso |ZAR - South Africa Rand</p>
+{% endblock %}

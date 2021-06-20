@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Currency Converter{% endblock %}
+
+{%block content %}
+<h1>Foreign Currency Exchange Rate Calculator</h1>
+<h2>The result is {{ symbol }}{{ amount }}</h2>
+<br>
+<form id="return-home" action="/">
+    <input type="submit" value="Home" id="submit-button">
+</form>
+{% endblock %}
